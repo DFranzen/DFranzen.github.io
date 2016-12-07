@@ -1,0 +1,48 @@
+<link rel="stylesheet" type="text/css" href="index.css" />
+
+<h1>VocabelTrainer</h1>
+<h2> How it all works</h2>
+<p>Learn your vocabulary with sets of <b>virtual vocabulary index cards</b>. Each index card contains a word of the foreign language on the front face. The back face of the card contains the translation in the known language and is hidden at first. The student can read the foreign word and decide on the translation, before the solution is revealed by a tap on the hidden face of the card. If the solution matches the solution the student thought of, the card can be swiped to the right, otherwise the card has to be swiped to the left.</p>
+
+<p>The set of vocabulary cards is organised into 5 <b>stacks</b>. In the beginning all cards are shuffled into the 1st stack. Every time the student gets a word correct, this card gets mixed into the next higher stack. A word which was answered wrongly is mixed into the lower stack, unless the card is already in the lowest stack. The app always selects one card from the lowest possible stack, but skips the last 5 asked words. This way the words known the least will be asked more often, but single unknwon words will not be asked right after each other to avoid only learning them into ultra-short memory.</p>
+
+<p>Once all words have been pushed to the highest (5th) stack, the app enters into a <b>repetition mode</b>. During this mode, all cards are asked once and wrongly answered words are mixed into the lowest (1st) stack while correctly answered words are kept in stack 5.</p>
+
+<p>The app reads the words from vocabulary files, each containing word from one topic, one lesson or one section of a textbook. In the menu of the app, these files can be organised and one or more files chosen to learn together. After a learning session is finished the progress is written back into the separate files, so they can be studied on their own later.</p>
+
+<h2>Screenshots</h2>
+
+<h2>Installation</h2>
+<h3>App</h3>
+The app is not jet available on the Play Store. In the meantime it can be installed manually in a few simple steps:
+
+1. Get the package:<br>
+The package for Android can be downloaded <a href="res/VokabelTrainer.apk">HERE</a>. Download it on your computer and transfer it to the phone or download on the phone directly.
+
+2. Open the package:<br>
+Should the installation not start automatically locate the package file VokabelTrainer.apk using any file explorer in your Download folder or where you saved it. A simple click should start the installation process.
+
+3. Authorise installation:<br>
+Since this package is not obtained from the Play Store Android's security guidelines prevent the package to be installed. Your phone will warn you about the unknown source of this app. To install it, select in Settings, Security the option unknown sources. If possible I recommend to select the additional option "Allow only this installation" to prevent malicious apps to be installed in the future.
+After these settings press the "Install" button and VokabelTrainer will be installed and will be available in your app-drawer.
+
+<h3>Vocabulary files</h3>
+Vocabulary files can be opened from any location accessible from the android phone. This includes cloud storage services like Google Drive and Dropbox (depending on the Android version). To add vocabulary files to the 
+
+<a name="UI"\>
+  <h2>The user interface</h2>
+  
+
+<h2>Vocabulary files</h2>
+Each file contains words of one topic, one lesson or one section of a textbook, but it is really up to you how you organise your vocabulary files. A vocabulary file is basically a text file, containing one word pair per line. The foreign word and its translation are separated by a semi-colon ; . The name of the file is also used as the name for this topic in the app and the extension can be chosen arbitrary. Recommended extensions are .txt (text), .voc (vocabulary) or .csv (Comma separated value.
+
+<h3>Create / edit</h3>
+Vocabulary files can be created with any text editor, for example "Notepad" on Windows, "kwrite" on Linux or "TextEdit" (with "plain text" selected in Settings for Format) on Mac. In this case the separating ; has to be inserted manually.
+For convenience, vocabulary can also be created using excel-like programs (including libreOffice/openOffice or Numbers on Mac). To create a vocabulary file in these programs, enter the foreign words into the first column of a table and their translations into the second column. After all words have been entered, export the table as CSV (comma separated values) and, if necessary, select ";" as column separator and "New line" as line separator.
+
+
+<h2>The project</h2>
+This project has been programmed in PhoneGap and compiled for Android. It uses Cordova version 5.3.1 and, appart from the default plugins only uses the following 2 plugins to find vocabulary files:
+
+com.cesidiodibenedetto.filechooser 1.0.0 "FileChooser"
+com.megster.cordova.FileChooser 0.0.0 "File Chooser"
