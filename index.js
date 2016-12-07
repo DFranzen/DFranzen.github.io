@@ -80,7 +80,7 @@ var ui =
 	    navigate: function(source,title,color)
 	    {
 		var catDiv = document.getElementById("cat"+title);
-		document.getElementById("content").innerHTML= '<object id="extContent" type="text/html" data="'+source + '" ></object>';
+		document.getElementById("content").innerHTML= '<object id="extContent" type="text/html" data="/'+source + '" ></object>';
 		var cats=document.getElementsByClassName("sbCategory");
 		var i=0;
 		for (;i<cats.length;i++)
