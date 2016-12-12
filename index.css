@@ -76,3 +76,19 @@ h1
     margin-bottom: 0.25em;
     box-sizing: border-box;
 }
+
+.pane
+{
+    flex:30;
+}
+.gap
+{
+    flex:3;
+}
+
+.flexContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

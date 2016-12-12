@@ -10,10 +10,8 @@
 
 <p>The app reads the words from vocabulary files, each containing word from one topic, one lesson or one section of a textbook. In the menu of the app, these files can be organised and one or more files chosen to learn together. After a learning session is finished the progress is written back into the separate files, so they can be studied on their own later.</p>
 
-<h2>Screenshots</h2>
-
-<h2>Installation</h2>
-<h3>App</h3>
+<h2>How to install</h2>
+<h3>Install the app</h3>
 The app is not jet available on the Play Store. In the meantime it can be installed manually in a few simple steps:
 
 <p>1. Get the package:<br>
@@ -26,15 +24,52 @@ Should the installation not start automatically locate the package file VokabelT
 Since this package is not obtained from the Play Store Android's security guidelines prevent the package to be installed. Your phone will warn you about the unknown source of this app. To install it, select in Settings, Security the option unknown sources. If possible I recommend to select the additional option "Allow only this installation" to prevent malicious apps to be installed in the future.
 After these settings press the "Install" button and VokabelTrainer will be installed and will be available in your app-drawer.</p>
 
-<h3>Vocabulary files</h3>
+<h3>Add vocabulary files</h3>
 Vocabulary files can be opened from any location accessible from the android phone. This includes cloud storage services like Google Drive and Dropbox (depending on the Android version). To add vocabulary files to the 
 
-<a name="UI"\>
-  <h2>The user interface</h2>
-  
+<a name="UI"></a>
+  <h2>How to use the app</h2>
+  <div> The following shows the 3 different views of the app:</div>
+  <div class="flexContainer">
+      <div class="gap"> </div>
+  <div class="pane">
+    <img src="/res/menu.png" alt="Menu view" width="100%" \><br>
+    In the list view, all previously studied files are listed. With the "+" button <b>new files</b> can be added to the list. This button opens the default open dialog of your phone.<br>
+    Each file can be <b>selected or deselected</b> by clicking on it. The selected files will be marked in blue. To the left of each file, a small symbol shows the <b> study progress</b>.<br>
+    By holding down on a file in the list a <b>detailed view</b> about this file is opened.<br>
+    The top right corner shows a <b>preview</b> of the selected files. By clicking the arrows on the preview, the languages asked and learned will be swapped.<br>
+    <br>
+    To <b>start</b> the studying session, press the green button on the bottom right. This progresses to the study view.
+  </div>
+  <div class="gap"> </div>
+  <div class="pane">
+    <img src="/res/question.png" alt="Question view" width="100%" \>
+    The study view shows a word in the asked language. Once you have decided on the translation click the <b>?</b> and the answer is reviewed. 
+    <img src="/res/answer.png" alt="Answer view" width="100%" \>
+    If you got the answer correct press the green button or swipe the card with the answer towards the green button on the right. If you got the answer wrong, press or swipe the card to the red button on the left.<br><br>
+    To return back to the list view press the list button in the top left corner.
+  </div>
+  <div class="gap"> </div>
+  <div class="pane">
+    <img src="/res/details.png" alt=" view" width="100%" \>
+    The details view shows information about a file including the study progress. The "Options" tab contains additional options to manipulate the file.
+    <ul>
+      <li><b> Remove file from list</b> removes the vocabulary file from the list in the app. The file and its progress stays saved in the original place on the phone.
+      <li><b>Swap languages</b> permanently swaps the asked and the learned language inside the file. This is needed if you want to study two files together which were created with different asking directions.
+      <li><b>Reset Progress</b> will move all words in this file to the lowest stack. This way the study progress can be started from the beginning.
+    </ul>
+  </div>
+    <div class="gap"> </div>
+  </div>
 
-<h2>Vocabulary files</h2>
-Each file contains words of one topic, one lesson or one section of a textbook, but it is really up to you how you organise your vocabulary files. A vocabulary file is basically a text file, containing one word pair per line. The foreign word and its translation are separated by a semi-colon ; . The name of the file is also used as the name for this topic in the app and the extension can be chosen arbitrary. Recommended extensions are .txt (text), .voc (vocabulary) or .csv (Comma separated value.
+<div><h2>Vocabulary files</h2>
+  Each file contains words of one topic, one lesson or one section of a textbook, but it is really up to you how you organise your vocabulary files. A vocabulary file is basically a text file, containing one word pair per line. The foreign word and its translation are separated by a semi-colon ; . The name of the file is also used as the name for this topic in the app and the extension can be chosen arbitrary. Recommended extensions are .txt (text), .voc (vocabulary) or .csv (Comma separated value.
+<br><br>
+  Here are some example Arabic/German vocabulary files:<br>
+  <a href="/res/MilitaerSicherheit.csv">Military and Security</a><br>
+  <a href="/res/Politik.csv">Politics</a><br>
+    
+</div>
 
 <h3>Create / edit</h3>
 Vocabulary files can be created with any text editor, for example "Notepad" on Windows, "kwrite" on Linux or "TextEdit" (with "plain text" selected in Settings for Format) on Mac. In this case the separating ; has to be inserted manually.<br>
