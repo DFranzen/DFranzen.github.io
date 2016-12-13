@@ -92,3 +92,11 @@ h1
     flex-direction: row;
     justify-content: center;
 }
+
+
+@media only screen and (max-device-width: 120em) {
+  /* define mobile specific styles come here */
+  .flexContainer { 
+    flex-direction: column;
+  }
+}
