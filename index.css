@@ -93,10 +93,22 @@ h1
     justify-content: center;
 }
 
+.screenshot
+{
+    width:100%;
+}
+
 
 @media only screen and (max-device-width: 120em) {
   /* define mobile specific styles come here */
   .flexContainer { 
     flex-direction: column;
   }
+
+  .screenshot
+  {
+      width:50%;
+      text-align:center;
+  }
+
 }
