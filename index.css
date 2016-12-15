@@ -93,13 +93,62 @@ h1
     justify-content: center;
 }
 
-.screenshot
+.screenshotimg
 {
     width:100%;
 }
 
+.header
+{
+    text-align:center;
+    font-weight: bold;
+    font-size:150%;
+    margin: 1em;
+}
 
-@media only screen and (max-device-width: 120em) {
+.fold
+{
+    height: 0px;
+    overflow: hidden;
+}
+
+.fold.open
+{
+    height:20em;
+    -webkit-transition: all 2.5s ease-in-out;
+    -moz-transition: all 2.5s ease-in-out;
+    -ms-transition: all 2.5s ease-in-out;
+    -o-transition: all 2.5s ease-in-out;
+    transition:all 2.5s;
+}
+
+#buttonInstall
+{
+    display:none;
+    position: absolute;
+    right: 1em;
+    top:1em;
+    width: 15em;
+    font-size: 150%;
+    text-align: center;
+    background: red;
+    background: linear-gradient(to bottom right, red, orange); /* Standard syntax */
+    border-radius: 1em;
+    padding: 1em;
+    margine: 1em;
+}
+
+@keyframes close
+{
+    to {height:0%}
+}
+
+@keyframes open
+{
+    to {height: auto}
+}
+
+@media only screen and (max-device-width: 80em) {
   /* define mobile specific styles come here */
   .flexContainer { 
     flex-direction: column;
@@ -109,6 +158,11 @@ h1
   {
       width:50%;
       text-align:center;
+  }
+
+  #buttonInstall
+  {
+      display:inline;
   }
 
 }

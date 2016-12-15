@@ -77,7 +77,98 @@ var ui =
 	    }
 	,content:
 	{
-	    navigate: function(source,title,color)
+	    init: function(params)
+	    {
+		var headers = document.getElementsByClassName("header");
+		var i=0;
+		for (;i<headers.length;i++)
+		{
+		    var hElement = headers[i];
+		    
+		    var indicator = document.createElement("span");
+		    indicator.className="indicator";
+		    indicator.innerHTML = "&#9654;";
+		    
+		    hElement.insertBefore(indicator,hElement.childNodes[0]);
+		    
+		    headers[i].addEventListener
+		    (
+			"click"
+			, function(fold,indicator) {
+			    console.log("Next sibling is " + fold.innerHTML);
+			    return function(){
+				ui.content.openSection(fold);
+				var inds = document.getElementsByClassName("indicator");
+				var i=0;
+				for (;i<inds.length;i++)
+				{
+				    ui.content.markClosed(inds[i]);
+				}
+				ui.content.openThis(fold);
+				ui.content.markOpened(indicator);
+			    }
+			}(headers[i].nextElementSibling,indicator)
+		    )
+		}
+		var params = getQueryParams(location.search)
+		var paramOpen = params.open;
+		if (paramOpen == undefined) paramOpen = "hSummary";
+		document.getElementById(paramOpen).dispatchEvent(new Event("click"));
+	    }
+	    , markOpened(element)
+	    {
+		element.innerHTML = "&#9660;";
+	    }
+	    , markClosed(element)
+	    {
+		element.innerHTML = "&#9654;";
+	    }
+	    , openSection(section)
+	    {
+		if (section.classList.contains("open")) return;
+		var folds = document.getElementsByClassName("fold");
+		var i=0;
+		for (;i<folds.length;i++)
+		{
+		    ui.content.closeThis(folds[i]);
+		}
+		ui.content.openThis(section);
+	    }
+	    , openThis(element)
+	    {
+		element.style.height = 'auto';
+		var end = getComputedStyle(element).height;
+		element.style.height = "0px";
+
+		element.offsetHeight // force repaint
+		element.style.transition = 'height .5s ease-in-out'
+		element.style.height = end
+
+		element.addEventListener
+		(
+		    'transitionend'
+		    , function transitionEnd(event)
+		    {
+			if (event.propertyName == 'height')
+			{
+			    element.style.transition = '';
+			    element.style.height = 'auto';
+			    element.removeEventListener('transitionend', transitionEnd, false);
+			}
+		    }
+		    , false)
+		
+		element.classList.add("open");
+	    }
+	    ,closeThis(element)
+	    {
+		element.classList.remove("open");
+		element.style.height = getComputedStyle(element).height;
+		element.style.transition = 'height .5s ease-in-out'
+		element.offsetHeight // force repaint
+		element.style.height = '0px'
+	    }
+	    , navigate: function(source,title,color)
 	    {
 		var catDiv = document.getElementById("cat"+title);
 		document.getElementById("content").innerHTML= '<object id="extContent" type="text/html" data="/'+source + '" ></object>';
@@ -173,4 +264,18 @@ function rgb2hsl(r, g, b){
     }
 
     return [Math.floor(h * 360), Math.floor(s * 100), Math.floor(l * 100)];
+}
+
+function getQueryParams(qs) {
+    qs = qs.split('+').join(' ');
+
+    var params = {},
+        tokens,
+        re = /[?&]?([^=]+)=([^&]*)/g;
+
+    while (tokens = re.exec(qs)) {
+        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+    }
+
+    return params;
 }
